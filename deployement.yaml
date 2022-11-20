@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: api-ml-container
-        - image: gcr.io/api-ml-project/api:GITHUB_SHA
-        ports:
-          - containerPort: 8000
+          image: gcr.io/api-ml-project/api:GITHUB_SHA
+          ports:
+            - containerPort: 8000
