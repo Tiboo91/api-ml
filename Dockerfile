@@ -1,6 +1,6 @@
 FROM debian:latest
 
-RUN apt-get update && apt-get install python3-pip -y && pip3 install && pip install -r requirements.txt
+RUN apt-get update && apt-get install python3-pip -y && pip install -r requirements.txt
 
 
 ADD /source/server.py /fraudapi/main.py
