@@ -18,5 +18,5 @@ spec:
       -image: gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
         name: api
         ports:
-        -containerPort: 5000
+        -containerPort: 8000
           name: http
