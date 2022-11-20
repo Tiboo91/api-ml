@@ -1,23 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: api-ml-p2-de
   labels:
-    app: api
-  name: api
+    app: api-ml-p2-de
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api
+      app: api-ml-p2-de
   template:
     metadata:
       labels:
-        app: api
+        app: api-ml-p2-de
     spec:
       containers:
-      -image: gcr.io/$PROJECT_ID/$IMAGE:GITHUB_SHA
-        name: api
+      -image: gcr.io/api-ml-project/api:GITHUB_SHA
+        name: api-ml-container
         ports:
         -containerPort: 8000
-          name: http
-
