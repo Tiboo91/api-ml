@@ -16,10 +16,10 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
-  GKE_CLUSTER: 
-  GKE_ZONE: us-central1-c   # Add your cluster zone here.
-  DEPLOYMENT_NAME: gke-test # Add your deployment name here.
-  IMAGE: static-site
+  GKE_CLUSTER: api-ml
+  GKE_ZONE: europe-west9-c
+  DEPLOYMENT_NAME: firs-deployement  # Add your deployment name here.
+  IMAGE: test-api
 
 jobs:
   setup-build-publish-deploy:
