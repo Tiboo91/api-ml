@@ -15,8 +15,9 @@ spec:
         app: api
     spec:
       containers:
-      -image: gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+      -image: gcr.io/$PROJECT_ID/$IMAGE:GITHUB_SHA
         name: api
         ports:
         -containerPort: 8000
           name: http
+
