@@ -19,7 +19,7 @@ env:
   GKE_CLUSTER: api-ml
   GKE_ZONE: europe-west9-c
   DEPLOYMENT_NAME: firs-deployement  # Add your deployment name here.
-  IMAGE: test-api
+  IMAGE: api
 
 jobs:
   setup-build-publish-deploy:
@@ -68,9 +68,6 @@ jobs:
     #  run: |-
     #    curl -sfLo kustomize https://github.com/kubernetes-sigs/kustomize/releases/download/v3.1.0/kustomize_3.1.0_linux_amd64
     #    chmod u+x ./kustomize
-    # Setup gcloud CLI
-    - name: Set up Cloud SDK
-      uses: google-github-actions/setup-gcloud@v1
 
     # Get the GKE credentials so we can deploy to the cluster
     - run: |-
