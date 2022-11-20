@@ -2,8 +2,8 @@ FROM ubuntu:latest
 
 WORKDIR /fraudapi
 
-COPY ./main.py /fraudapi/main.py
-COPY ./knn_fraud_model.sav /fraudapi/knn_fraud_model.sav
+COPY ./source/main.py /fraudapi/main.py
+COPY ./source/knn_fraud_model.sav /fraudapi/knn_fraud_model.sav
 COPY ./requirements.txt  /fraudapi/requirements.txt
 
 RUN apt-get update && apt-get install python3-pip -y && pip install -r requirements.txt 
