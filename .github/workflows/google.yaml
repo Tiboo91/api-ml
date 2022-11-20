@@ -15,7 +15,7 @@ on:
       - main
 
 env:
-  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  PROJECT_ID: api-ml-project #${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: api-ml  
   GKE_ZONE: europe-west9-c
   DEPLOYMENT_NAME: api  # Add your deployment name here.
