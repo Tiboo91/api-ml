@@ -23,14 +23,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: api-ml-p2-de-service
-  labels:
-    app: api-ml-p2-de
+  name: my-lb-service
 spec:
-  type: NodePort
-  ports:
-    - port: 8000
-      targetPort: 8000
-      nodePort: 30080
+  type: LoadBalancer
   selector:
     app: api-ml-p2-de
+  ports:
+  - protocol: TCP
+    port: 8000
+    targetPort: 8000
