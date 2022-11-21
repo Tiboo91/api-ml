@@ -27,6 +27,7 @@ metadata:
   labels:
     app: api-ml-p2-de
 spec:
+  type: NodePort
   ports:
     - port: 8000
       targetPort: 8000
