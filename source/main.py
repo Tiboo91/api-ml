@@ -140,7 +140,7 @@ async def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(
     return {"access_token": access_token}
 
 
-@app.get("/helthCheck",response_model=HelthCheck)
+@app.get("/healthCheck",response_model=HelthCheck)
 async def helth_check():
     try :
         if len(knn.classes_)==2:
