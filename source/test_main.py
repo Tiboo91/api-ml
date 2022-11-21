@@ -25,4 +25,5 @@ def test_authentification_n():
         "/gettoken",
         data={"username": "clementine", "password": "mandarinee"},
     )
-    assert response.status_code == 200
+    assert response.status_code == 401
+    assert response.json()['detail']=='Incorrect username or password'
