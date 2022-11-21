@@ -154,8 +154,8 @@ async def helth_check():
 async def fraudCheck(
     purchase_value: int ,
     age: int,
-    signup_time:datetime=Query(datetime.now(), description='Transaction source'),
-    purchase_time:datetime=Query(datetime.now()-timedelta(days=1), description='Transaction source'),
+    signup_time:datetime=Query(datetime.now()-timedelta(days=1), description='Transaction source'),
+    purchase_time:datetime=Query(datetime.now(), description='Transaction source'),
     sex: str = Query(enum=["Male","Female"], description='Transaction source'),
     source: str = Query(enum=["SEO","Ads","Direct"], description='Transaction source'),
     browser: str =  Query(enum=["Chrome", "Opera", "Safari", "IE", "FireFox"], description='Transaction browser'),
