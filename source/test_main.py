@@ -13,10 +13,16 @@ def test_openapi_schema():
     response = client.get("/openapi.json")
     assert response.status_code == 200
 
-def test_authentification():
+def test_authentification_p():
     response = client.post(
         "/gettoken",
-        json={"username": "clementine", "password": "mandarine"},
+        data={"username": "clementine", "password": "mandarine"},
     )
     assert response.status_code == 200
 
+def test_authentification_n():
+    response = client.post(
+        "/gettoken",
+        data={"username": "clementine", "password": "mandarinee"},
+    )
+    assert response.status_code == 200
