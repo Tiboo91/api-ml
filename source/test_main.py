@@ -37,8 +37,11 @@ def test_fraud_detection():
         'signup_time':'2022-11-20T21:18:33.518815',
         'purchase_time':'2022-11-21T22:18:33.518863',
         'sex':'Male',
-        'browser':'Chrome'
+        'browser':'Chrome',
+        'source':'SEO'
     }
-    header={"Content-Type":"Bearer" + " " + response.json()['access_token']}
+    header={"Authorization":"Bearer" + " " + response.json()['access_token']}
     response = client.get("/fraudCheck",params=params,headers=header)
     assert response.status_code == 200
+    assert response.text.upper() in ('TRUE','FALSE')
+
