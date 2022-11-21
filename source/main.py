@@ -60,7 +60,7 @@ class Result(BaseModel):
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="getToken")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="gettoken")
 
 knn = joblib.load(filename)
 
