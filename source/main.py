@@ -170,12 +170,12 @@ async def fraudCheck(
                       "browser":And(str,lambda x : x in ("Chrome", "Opera", "Safari", "IE", "FireFox"))})
     
     data = {"purchase_value": purchase_value,
-                      "age":age,
-                      "signup_time" : signup_time,
-                      "purchase_time"  : purchase_time,
-                      "sex":sex,
-                      "source":source,
-                      "browser":browser}
+            "age":age,
+            "signup_time" : signup_time,
+            "purchase_time"  : purchase_time,
+            "sex":sex,
+            "source":source,
+            "browser":browser}
 
     try:
         data = schema.validate(data)
