@@ -30,16 +30,6 @@ spec:
   ports:
     - port: 8000
       targetPort: 8000
+      nodePort: 30080
   selector:
     app: api-ml-p2-de
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: my-api-eval-ingres1
-spec:
-  defaultBackend:
-    service:
-      name: api-ml-p2-de-service
-      port:
-        number: 8000
