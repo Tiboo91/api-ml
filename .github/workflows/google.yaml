@@ -33,12 +33,10 @@ jobs:
         pip install pytest
         pip install -r requirements.txt
         pip install httpx
-        pwd
-        ls -R 
     
     - name: test
       run: |
-        pytest
+        ./source/pytest
 
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
