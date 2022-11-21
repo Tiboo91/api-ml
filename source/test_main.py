@@ -27,3 +27,18 @@ def test_authentification_n():
     )
     assert response.status_code == 401
     assert response.json()['detail']=='Incorrect username or password'
+
+
+def test_fraud_detection():
+    response = client.post("/gettoken",data={"username": "clementine", "password": "mandarine"})
+    params={
+        'purchase_value': 22,
+        'age': 35,
+        'signup_time':'2022-11-20T21:18:33.518815',
+        'purchase_time':'2022-11-21T22:18:33.518863',
+        'sex':'Male',
+        'browser':'Chrome'
+    }
+    header={"Content-Type":"Bearer" + " " + response.json()['access_token']}
+    response = client.get("/fraudCheck",params=params,headers=header)
+    assert response.status_code == 200
